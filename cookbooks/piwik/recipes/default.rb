@@ -115,3 +115,25 @@ unless node['piwik']['vm_type'] == 'minimal'
     USERSQL
   end
 end
+
+# map generator setup
+if File.directory?(node['piwik']['map_generator'])
+  map_packages = %w(
+    libgeos-c1 libxml2-dev libxslt-dev
+    postgresql-server-dev-9.3
+    python-dev python-gdal python-pip
+    unzip
+  )
+
+  map_packages.each do |pkg|
+    package pkg do
+    end
+  end
+
+  execute 'map_generator_install' do
+    command <<-KARTOGRAPH
+    sudo -H pip install -r https://raw.githubusercontent.com/kartograph/kartograph.py/master/requirements-nogdal.txt
+    sudo -H pip install git+https://github.com/kartograph/kartograph.py.git
+    KARTOGRAPH
+  end
+end

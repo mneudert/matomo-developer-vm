@@ -9,6 +9,7 @@ module Piwik
     attr_reader :server_name
     attr_reader :source
     attr_reader :source_device_detector
+    attr_reader :source_map_generator
     attr_reader :vm_ip
     attr_reader :vm_name
     attr_reader :vm_type
@@ -29,6 +30,7 @@ module Piwik
       server_name            = 'dev.piwik.org'
       source                 = '../piwik'
       source_device_detector = '../device-detector'
+      source_map_generator   = '../piwik-map-generator'
 
       mysql_database = 'piwik'
       mysql_password = 'piwik'
@@ -50,6 +52,7 @@ module Piwik
       @server_name            = server_name
       @source                 = source
       @source_device_detector = source_device_detector
+      @source_map_generator   = source_map_generator
 
       @mysql_database = mysql_database
       @mysql_password = mysql_password

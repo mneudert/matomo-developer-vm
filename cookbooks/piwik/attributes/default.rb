@@ -7,6 +7,7 @@ default['piwik']['vm_type'] = config.vm_type
 
 default['piwik']['docroot']         = '/srv/piwik'
 default['piwik']['device_detector'] = '/srv/device-detector'
+default['piwik']['map_generator']   = '/srv/map-generator'
 default['piwik']['mysql_database']  = config.mysql_database
 default['piwik']['mysql_password']  = config.mysql_password
 default['piwik']['mysql_username']  = config.mysql_username

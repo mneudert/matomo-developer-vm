@@ -7,6 +7,7 @@ vm_type = 'minimal'
 server_name            = 'dev.piwik.org'
 source                 = '../piwik'
 source_device_detector = '../device-detector'
+source_map_shaper      = '../piwik-map-shaper'
 
 mysql_database = 'piwik'
 mysql_password = 'piwik'

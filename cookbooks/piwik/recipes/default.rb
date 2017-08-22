@@ -115,3 +115,11 @@ unless node['piwik']['vm_type'] == 'minimal'
     USERSQL
   end
 end
+
+# map shaper setup
+if File.directory?(node['piwik']['map_shaper'])
+  include_recipe 'nodejs'
+
+  package 'unzip' do
+  end
+end
